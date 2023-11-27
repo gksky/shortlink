@@ -20,4 +20,11 @@ class LinksController extends Controller
 
         return response()->json($link);
     }
+
+    public function getShortLinks(Request $request)
+    {
+        $links = Links::where('uid', Auth::user()->id)->get();
+
+        return response()->json($links);
+    }
 }
