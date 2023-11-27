@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('links', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('uid')->nullable();
+            $table->index('uid');
             $table->string('title')->nullable();
             $table->string('link', 2048);
             $table->string('shortLink');
