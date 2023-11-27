@@ -19,7 +19,7 @@ return new class extends Migration
             $table->index('uid');
             $table->string('title')->nullable();
             $table->string('link', 2048);
-            $table->string('shortLink');
+            $table->string('shortLink')->unique();
             $table->unsignedInteger('views')->default(0);
             $table->timestamps();
         });
