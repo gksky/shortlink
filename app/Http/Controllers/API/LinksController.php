@@ -27,4 +27,15 @@ class LinksController extends Controller
 
         return response()->json($links);
     }
+
+    public function deleteShortLink(Request $request)
+    {
+        $validated = $request->validate([
+            'id' => ['required'],
+        ]);
+        
+        $deletedLinks = Links::where('id', $request->id)->delete();
+
+        return response()->json($deletedLinks);
+    }
 }
